@@ -1,126 +1,153 @@
-<!DOCTYPE html> 
-<html> 
-<!-- The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only.  Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.
- 
+<!DOCTYPE html>
+<html>
+
+<!-- 
+The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin. This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.
+
 THIS CODE SHOULD NOT BE USED TO MAKE ANY IMPULSIVE DECISIONS TO BUY THINGS.
- 
- 
+
 Authors in chronological order of contribution:
 [Mila]
-	
+
 Further Information:
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
- 
+
 Research Educator:
 Timothy Riedel
 triedel@utexas.edu
- 
+
 Brief Description of Goal of Code:
 [To see if the user is a cat or a dog person.]
-	
+
 Known Issues:
 [ADD ANY KNOWN ISSUES HERE]
-
 -->
-	
-   <head> 
-      <title>Cat Person or Dog Person</title>  
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="mobile-web-app-capable" content="yes">
-      <link rel="stylesheet" href="w3.css">
-      <link rel="stylesheet" href="w3-colors-flat.css">
-   </head> 
 
+<head>
+  <title>Cat Person or Dog Person</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" href="w3.css">
+  <link rel="stylesheet" href="w3-colors-flat.css">
 
-<script>
-        var allergy_count = 0;
-        var cold_count = 0;
+  <style>
+    .body {
+      margin: 0em;
+    }
 
+    .page {
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: -100vw;
+      overflow-y: auto;
+      z-index: 0;
+      background-color: hsl(0, 0%, 100%);
+    }
 
-        function allergyAdd(){
-            allergy_count = allergy_count + 1;
-		alert(allergy_count);
-        }
+    .page:target {
+      left: 0vw;
+      z-index: 1;
+    }
+  </style>
 
-        function coldAdd(){
-            cold_count = cold_count + 1;
-        }
+  <script>
+    var allergy_count = 0;
+    var cold_count = 0;
 
+    function allergyAdd() {
+      allergy_count += 1;
+    }
+
+    function coldAdd() {
+      cold_count += 1;
+    }
+
+    function showResult() {
+      var result = "";
+
+      if (allergy_count > cold_count) {
+        result = "You are a cat person!";
+      } else if (cold_count > allergy_count) {
+        result = "You are a dog person!";
+      } else {
+        result = "You are both a cat and a dog person!";
+      }
+
+      document.getElementById("resultText").innerText = result;
+    }
   </script>
-
-
-
-<style>	
-.body {
-     margin: 0em;
-}
-.page {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: -100vw;
-    overflow-y: auto;
-    z-index: 0;
-    background-color: hsl(0,0%,100%);
-}
-
-  .page:target {
-    left: 0vw;
-    z-index: 1;
-}
-</style>
+</head>
 
 <body>
-<div id="header" class="w3-container w3-flat-carrot">
-	<h1>Are You a Cat or a Dog Person?</h1>
-</div>
-	
-<div id="content" class="w3-container">
-	<p>Do you wonder if you're a cat or a dog person? Answer a few short questions to find out!</p>
-	
-	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
-	
-	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
- 	
-	<p>THIS CODE SHOULD NOT BE USED TO MAKE ANY IMPULSIVE DECISIONS TO BUY THINGS</p>
 
-
-
-<div class="page" id="one">
+  <!-- Welcome Page -->
   <div class="w3-container w3-flat-carrot">
-    <h1>Question 1</h1>
+    <h1>Are You a Cat or a Dog Person?</h1>
   </div>
 
   <div class="w3-container">
-    <p>Are you more of an introvert or extrovert?</p>
-    
-    <a href="#two" class="w3-btn w3-grey w3-round" onclick="allergyAdd()">Introvert</a>
-    <a href="#two" class="w3-btn w3-grey w3-round" onclick="coldAdd()">Extrovert</a>
+    <p>Do you wonder if you're a cat or a dog person? Answer a few short questions to find out!</p>
+    <a href="#one" class="w3-btn w3-grey w3-round">Get Started</a>
+
+    <p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin...</p>
+    <p>THIS CODE SHOULD NOT BE USED TO MAKE ANY IMPULSIVE DECISIONS TO BUY THINGS</p>
   </div>
-</div>
 
+  <!-- Page 1 -->
+  <div class="page" id="one">
+    <div class="w3-container w3-flat-carrot">
+      <h1>Question 1</h1>
+    </div>
+    <div class="w3-container">
+      <p>Are you more of an introvert or extrovert?</p>
+      <a href="#two" class="w3-btn w3-grey w3-round" onclick="allergyAdd()">Introvert</a>
+      <a href="#two" class="w3-btn w3-grey w3-round" onclick="coldAdd()">Extrovert</a>
+    </div>
+  </div>
 
-  
+  <!-- Page 2 -->
+  <div class="page" id="two">
+    <div class="w3-container w3-flat-carrot">
+      <h1>Question 2</h1>
+    </div>
+    <div class="w3-container">
+      <p>Do you like to sleep a lot?</p>
+      <a href="#three" class="w3-btn w3-grey w3-round" onclick="allergyAdd()">Yes</a>
+      <a href="#three" class="w3-btn w3-grey w3-round" onclick="coldAdd()">No</a>
+    </div>
+  </div>
 
+  <!-- Page 3 -->
+  <div class="page" id="three">
+    <div class="w3-container w3-flat-carrot">
+      <h1>Question 3</h1>
+    </div>
+    <div class="w3-container">
+      <p>Do you enjoy outdoor activities?</p>
+      <a href="#result" class="w3-btn w3-grey w3-round" onclick="coldAdd(); showResult()">Yes</a>
+      <a href="#result" class="w3-btn w3-grey w3-round" onclick="allergyAdd(); showResult()">No</a>
+    </div>
+  </div>
 
-<div class="page" id="two">
-	<div class="w3-container w3-flat-carrot">
-		
+  <!-- Results Page -->
+  <div class="page" id="result">
+    <div class="w3-container w3-flat-carrot">
+      <h1>Results</h1>
+    </div>
+    <div class="w3-container">
+      <p id="resultText">Your result will appear here.</p>
+      <a href="#one" class="w3-btn w3-grey w3-round">Take the Quiz Again</a>
+    </div>
+  </div>
 
-        
-         <p>Question 2</p> 
-	
-	<div id="content" class="w3-container">
-		<p>Do you like to sleep a lot?</p>
-	</div><a href="#three" class="w3-btn w3-grey w3-round"> Yes </a>
-	</div><a href="#three" class="w3-btn w3-grey w3-round"> No </a>
-</div>	
-
-<footer class="w3-bottom w3-container w3-flat-carrot">
-	<p>DIY!</p>
-</footer>
+  <!-- Footer -->
+  <footer class="w3-bottom w3-container w3-flat-carrot">
+    <p>DIY!</p>
+  </footer>
 
 </body>
+
 </html>
