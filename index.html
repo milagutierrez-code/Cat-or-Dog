@@ -69,11 +69,11 @@ Known Issues:
       var result = "";
 
       if (allergy_count > cold_count) {
-        result = "You are a cat person!";
+        result = "You have a cold!";
       } else if (cold_count > allergy_count) {
-        result = "You are a dog person!";
+        result = "You have allergies!";
       } else {
-        result = "You are both a cat and a dog person!";
+        result = "You have both a cold and allergies?!";
       }
 
       document.getElementById("resultText").innerText = result;
@@ -85,15 +85,15 @@ Known Issues:
 
   <!-- Welcome Page -->
   <div class="w3-container w3-flat-belize-hole">
-    <h1>Are You a Cat or a Dog Person?</h1>
+    <h1>Do you have a cold or allregies?</h1>
   </div>
 
   <div class="w3-container">
-    <p>Do you wonder if you're a cat or a dog person? Answer a few short questions to find out!</p>
+    <p>Do you wonder if you have allergies or a cold? Answer a few short questions to find out!</p>
     <a href="#one" class="w3-btn w3-grey w3-round">Get Started</a>
 
     <p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin...</p>
-    <p>THIS CODE SHOULD NOT BE USED TO MAKE ANY IMPULSIVE DECISIONS TO BUY THINGS</p>
+    <p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE OFFICIALLY</p>
   </div>
 
   <!-- Page 1 -->
@@ -102,9 +102,9 @@ Known Issues:
       <h1>Question 1</h1>
     </div>
     <div class="w3-container">
-      <p>Are you more of an introvert or extrovert?</p>
-      <a href="#two" class="w3-btn w3-grey w3-round" onclick="allergyAdd()">Introvert</a>
-      <a href="#two" class="w3-btn w3-grey w3-round" onclick="coldAdd()">Extrovert</a>
+      <p>Do you have watery eyes?</p>
+      <a href="#two" class="w3-btn w3-grey w3-round" onclick="allergyAdd()">Yes</a>
+      <a href="#two" class="w3-btn w3-grey w3-round" onclick="coldAdd()">No</a>
     </div>
   </div>
 
@@ -114,7 +114,7 @@ Known Issues:
       <h1>Question 2</h1>
     </div>
     <div class="w3-container">
-      <p>Do you like to sleep a lot?</p>
+      <p>Do you have body aches?</p>
       <a href="#three" class="w3-btn w3-grey w3-round" onclick="allergyAdd()">Yes</a>
       <a href="#three" class="w3-btn w3-grey w3-round" onclick="coldAdd()">No</a>
     </div>
@@ -126,9 +126,9 @@ Known Issues:
       <h1>Question 3</h1>
     </div>
     <div class="w3-container">
-      <p>Are you more calm or energetic?</p>
-      <a href="#result" class="w3-btn w3-grey w3-round" onclick="coldAdd(); showResult()">Calm</a>
-      <a href="#result" class="w3-btn w3-grey w3-round" onclick="allergyAdd(); showResult()">Energetic</a>
+      <p>Do you have watery, clear mucus or thick, cloudy mucus?</p>
+      <a href="#result" class="w3-btn w3-grey w3-round" onclick="coldAdd(); showResult()">Watery and clear</a>
+      <a href="#result" class="w3-btn w3-grey w3-round" onclick="allergyAdd(); showResult()">Thic and cloudy</a>
     </div>
   </div>
 
