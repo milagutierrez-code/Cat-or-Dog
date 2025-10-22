@@ -65,14 +65,17 @@ Known Issues:
     function showResult() {
       var result = "";
 
-      if (allergy_count > allergy_count) {
+      if (allergy_count > cold_count) {
         result = "You have allergies!";
-      } else if (cold_count > cold_count) {
+      } else if (cold_count > allergy_count) {
         result = "You have a cold!";
       } else {
         result = "You have both a cold and allergies?!";
       }
 
+      function resetQuiz() {
+    allergy_count = 0;
+    cold_count = 0;
       document.getElementById("resultText").innerText = result;
     }
   </script>
@@ -136,7 +139,8 @@ Known Issues:
     </div>
     <div class="w3-container">
       <p id="resultText">Your result will appear here.</p>
-      <a href="#one" class="w3-btn w3-grey w3-round">Take the Quiz Again</a>
+      <a href="#one" class="w3-btn w3-grey w3-round" onclick="resetQuiz()">Take the Quiz Again</a>
+
     </div>
   </div>
 
