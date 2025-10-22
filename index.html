@@ -73,10 +73,11 @@ Known Issues:
         result = "You have both a cold and allergies?!";
       }
 
-      function resetQuiz() {
+      document.getElementById("resultText").innerText = result;
+    function resetQuiz() {
     allergy_count = 0;
     cold_count = 0;
-      document.getElementById("resultText").innerText = result;
+    document.getElementById("resultText").innerText = "Your result will appear here.";
     }
   </script>
 </head>
